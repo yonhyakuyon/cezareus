@@ -86,6 +86,14 @@ def decrypt_text_from_file(input_file, output_file, excel_file):
 # Пример использования
 input_path = "output.txt"  # Файл с зашифрованным текстом
 output_path = "decrypted.txt"  # Файл для расшифрованного текста
-excel_path = "freq.xlsx"  # Excel-файл с частотами символов
+print("Выберете по какой статистике сделать криптоанализ")
+print(
+    'нажмите "1" если по общей статистике русского языка, нажмите "2" для криптоанализа по статистике исходного текста'
+)
+choise = int(input())
+if choise == 1:
+    excel_path = "freq.xlsx"  # Excel-файл с частотами символов
+elif choise == 2:
+    excel_path = "frequencies.xlsx"  # Excel-файл с частотами символов
 
 decrypt_text_from_file(input_path, output_path, excel_path)
